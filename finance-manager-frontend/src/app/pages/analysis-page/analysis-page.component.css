@@ -1,0 +1,114 @@
+/* Main Container */
+.analysis-container {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.analysis-container h2 {
+  text-align: center;
+  color: #1a237e;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Month Picker */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Chart Wrapper */
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Resize Chart Canvas */
+canvas {
+  max-width: 350px !important;
+  max-height: 350px !important;
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 20px;
+}
+
+/* Breakdown Section */
+.breakdown {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.breakdown h3 {
+  color: #37474f;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.breakdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breakdown li {
+  font-size: 1rem;
+  color: #333;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  canvas {
+    max-width: 280px !important;
+    max-height: 280px !important;
+  }
+
+  .analysis-container {
+    padding: 20px;
+  }
+
+  .breakdown {
+    padding: 15px;
+  }
+
+  .breakdown h3 {
+    font-size: 1.2rem;
+  }
+
+  .breakdown li {
+    font-size: 0.95rem;
+  }
+}
+
+/* Back to Home Button */
+button[mat-raised-button][routerLink="/"] {
+  background-color: #2196f3;
+  color: white;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[mat-raised-button][routerLink="/"]:hover {
+  background-color: #1976d2;
+  transform: scale(1.05);
+}

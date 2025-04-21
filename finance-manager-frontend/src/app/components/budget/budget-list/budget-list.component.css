@@ -1,0 +1,193 @@
+/* Main Container for Budget List */
+.budget-list-container {
+  padding: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: #1a237e;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+}
+
+/* No Budgets Message */
+.no-budgets-message,
+div[ng-reflect-ng-if="true"] p {
+  text-align: center;
+  color: #ff5722;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 20px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.no-budgets-message:hover {
+  opacity: 1;
+}
+
+/* Month Filter */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #f1f3f6;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+mat-form-field mat-label {
+  font-weight: 500;
+}
+
+/* Budget Card Styling */
+mat-card {
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  margin-bottom: 24px;
+  border-left: 5px solid #3f51b5;
+}
+
+mat-card:hover {
+  background-color: #eef3fb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Budget Card Title */
+mat-card-title {
+  color: #1a237e;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+/* Budget Info */
+mat-card-content p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+/* Budget Card Actions */
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Button Base Styling */
+button[mat-raised-button] {
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+  text-transform: uppercase;
+}
+
+/* Delete Button */
+button[mat-raised-button][color="warn"] {
+  background-color: #d32f2f;
+  color: white;
+}
+
+button[mat-raised-button][color="warn"]:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* Add Budget Button */
+button[mat-raised-button][color="accent"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+button[mat-raised-button][color="accent"]:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Buttons Container (for Add Budget button) */
+.button-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Back Button (aligned within container, flush right) */
+.back-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-left: 20px; /* To align properly */
+}
+
+button[mat-raised-button][color="primary"] {
+  background-color: #1e88e5;
+  color: white;
+}
+
+button[mat-raised-button][color="primary"]:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .budget-list-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  mat-card {
+    padding: 16px;
+  }
+
+  .button-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-actions button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .back-button {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .budget-list-container {
+    padding: 16px;
+  }
+
+  mat-card {
+    padding: 14px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}

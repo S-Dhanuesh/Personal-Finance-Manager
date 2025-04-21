@@ -1,0 +1,81 @@
+/* Form Container */
+.glow-form-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Form Elements Styling */
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Alert Styling */
+.alert-warning {
+  background-color: #ffeb3b;
+  color: #e65100;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mat Form Fields */
+.mat-form-field {
+  width: 100%;
+}
+
+/* Glowing Fields */
+.glowing-field .mat-form-field-outline {
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glowing-field .mat-form-field-outline-thick {
+  border-color: transparent;
+}
+
+.glowing-field input:focus,
+.glowing-field input.mat-input-element {
+  box-shadow: 0 0 8px 2px rgba(0, 204, 255, 0.7);
+  border-color: #00bcd4;
+}
+
+/* Button Styling */
+.glow-button {
+  background: linear-gradient(to right, #00bcd4, #2196f3);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.glow-button:hover {
+  background: linear-gradient(to right, #2196f3, #00bcd4);
+  transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .glow-form-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .expense-form {
+    gap: 12px;
+  }
+}

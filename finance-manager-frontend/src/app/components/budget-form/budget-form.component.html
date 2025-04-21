@@ -1,0 +1,60 @@
+<h2 class="add-budget-title">
+  <mat-icon class="title-icon">add_circle</mat-icon>
+  Add Budget
+</h2>
+
+<div class="glow-form-container">
+  <form (ngSubmit)="onSubmit()" class="budget-form" #budgetForm="ngForm">
+    <!-- Category Input -->
+    <mat-form-field appearance="outline" class="w-100 glowing-field">
+      <mat-label>Category</mat-label>
+      <input
+        matInput
+        [(ngModel)]="budget.category"
+        name="category"
+        placeholder="e.g. Groceries"
+        required
+      />
+    </mat-form-field>
+
+    <!-- Limit Input -->
+    <mat-form-field appearance="outline" class="w-100 glowing-field">
+      <mat-label>Limit</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="budget.limit"
+        name="limit"
+        placeholder="e.g. 1500"
+        required
+      />
+    </mat-form-field>
+
+    <!--  Month Picker -->
+    <mat-form-field appearance="outline" class="w-100 glowing-field">
+      <mat-label>Month</mat-label>
+      <input
+        matInput
+        type="month"
+        [(ngModel)]="budget.month"
+        name="month"
+        required
+      />
+    </mat-form-field>
+
+    <!-- Submit Button -->
+    <button mat-raised-button color="primary" type="submit" class="glow-button">
+      Add Budget
+    </button>
+  </form>
+
+  <!-- Navigation Buttons (outside the form) -->
+  <div class="button-actions">
+    <button mat-raised-button color="accent" routerLink="/budgets" class="nav-button">
+      Go to Budgets
+    </button>
+    <button mat-raised-button color="primary" routerLink="/" class="nav-button">
+      ← Back
+    </button>
+  </div>
+</div>

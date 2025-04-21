@@ -1,0 +1,37 @@
+<div class="analysis-container">
+  <h2><mat-icon>insert_chart</mat-icon> Spending Analysis</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select Month</mat-label>
+    <input matInput type="month" [(ngModel)]="selectedMonth" (change)="onMonthChange()" />
+  </mat-form-field>
+
+  <div *ngIf="chartReady; else noData" class="chart-wrapper">
+    <canvas baseChart
+      [data]="{
+        labels: chartLabels,
+        datasets: [{ data: chartData, backgroundColor: ['#42a5f5', '#ef5350', '#66bb6a', '#ffa726', '#ab47bc'] }]
+      }"
+      [type]="chartType">
+    </canvas>
+
+    <!--  Breakdown section -->
+    <div class="breakdown" style="margin-top: 20px;">
+      <h3>Category Breakdown</h3>
+      <ul>
+        <li *ngFor="let item of categoryBreakdown">
+          <strong>{{ item.category }}:</strong> ₹{{ item.amount | number:'1.2-2' }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <p *ngIf="selectedMonth">No data available for the selected month.</p>
+  </ng-template>
+</div>
+
+<!-- Back to Home Button -->
+<button mat-raised-button color="primary" routerLink="/" style="margin-bottom: 16px;">
+<mat-icon>arrow_back</mat-icon> Back
+</button>

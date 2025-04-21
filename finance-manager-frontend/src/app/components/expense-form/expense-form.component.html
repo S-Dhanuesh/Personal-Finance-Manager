@@ -1,0 +1,76 @@
+<h2>Add Expense</h2>
+
+<div class="glow-form-container">
+  <form (ngSubmit)="submitExpense()" class="expense-form" #expenseForm="ngForm">
+    <!-- Alert Message -->
+    <div *ngIf="warningMessage" class="alert-warning">
+      {{ warningMessage }}
+    </div>
+
+    <!-- Title -->
+    <mat-form-field appearance="outline" class="w-100 glowing-field">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        [(ngModel)]="expense.title"
+        name="title"
+        placeholder="e.g. Lunch"
+        required
+      />
+    </mat-form-field>
+
+    <!-- Amount -->
+    <mat-form-field appearance="outline" class="w-100 glowing-field">
+      <mat-label>Amount</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="expense.amount"
+        name="amount"
+        placeholder="e.g. 500"
+        required
+      />
+    </mat-form-field>
+
+    <!-- Category -->
+    <mat-form-field appearance="outline" class="w-100 glowing-field">
+      <mat-label>Category</mat-label>
+      <input
+        matInput
+        [(ngModel)]="expense.category"
+        name="category"
+        placeholder="e.g. Food"
+        required
+      />
+    </mat-form-field>
+
+    <!-- Date -->
+    <mat-form-field appearance="outline" class="w-100 glowing-field">
+      <mat-label>Date</mat-label>
+      <input
+        matInput
+        type="date"
+        [(ngModel)]="expense.date"
+        name="date"
+        required
+      />
+    </mat-form-field>
+
+    <!-- Receipt Upload -->
+    <div class="receipt-upload">
+      <label for="receipt">📎 Upload Receipt (optional)</label>
+      <input type="file" id="receipt" (change)="onFileChange($event)" accept="image/*" />
+    </div>
+
+    <!-- Preview (if available) -->
+    <div *ngIf="receiptPreview" class="receipt-preview">
+      <p><strong>Receipt Preview:</strong></p>
+      <img [src]="receiptPreview" alt="Receipt Preview" width="200" />
+    </div>
+
+    <!-- Submit Button -->
+    <button mat-raised-button color="primary" type="submit" class="glow-button">
+      Add Expense
+    </button>
+  </form>
+</div>

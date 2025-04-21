@@ -1,0 +1,52 @@
+<!-- HEADER SECTION -->
+<div class="app-header">
+  <!-- GIF in marked area -->
+  <img src="/gif1.gif" alt="Animated GIF" class="header-gif" />
+
+  <!-- App Heading with Material Icon -->
+  <h1 class="app-title">
+    <mat-icon class="app-icon">savings</mat-icon>
+    Personal Finance Manager
+  </h1>
+
+  <!-- Animated Text -->
+  <div class="animated-text">
+    <span
+      class="word"
+      *ngFor="let word of words; let i = index"
+      [style.animationDelay]="getDelay(i)"
+    >
+      {{ word }}
+    </span>
+  </div>
+
+  <!-- Header Buttons with Material Icons -->
+  <div class="header-buttons">
+    <!-- About Icon -->
+    <button class="header-btn" matTooltip="About">
+      <mat-icon>info</mat-icon>
+    </button>
+
+    <!-- Login Icon -->
+    <button class="header-btn" matTooltip="Login">
+      <mat-icon>login</mat-icon>
+    </button>
+
+    <!-- Home Icon -->
+    <a class="home-button" routerLink="/" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+    </a>
+  </div>
+</div>
+
+<!-- Router Content -->
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Bottom Right GIF -->
+<img
+  src="/gif3.gif"
+  alt="Money Penguin"
+  class="bottom-right-gif"
+/>

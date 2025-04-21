@@ -1,0 +1,205 @@
+/* Main Container */
+.savings-goal-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+/* Heading */
+.savings-goal-container h2 {
+  text-align: center;
+  color: #1a237e;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1.5px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.3;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #1a237e;
+}
+
+/* Form Layout */
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+/* Input Styling */
+.goal-input {
+  width: 100%;
+}
+
+mat-form-field {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+mat-form-field .mat-label {
+  color: #37474f;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+mat-input-element {
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  color: #37474f;
+}
+
+/* Button Styling (Global for all mat-raised-button) */
+button[mat-raised-button] {
+  background-color: #2196f3;
+  color: white;
+  font-size: 16px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+button[mat-raised-button]:hover {
+  background-color: #1976d2;
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+button[mat-raised-button]:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+/* Progress Display */
+.progress-display {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 32px;
+  border-top: 4px solid #2196f3;
+}
+
+.progress-display h3 {
+  color: #37474f;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #1e88e5;
+}
+
+.progress-display p {
+  color: #37474f;
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+/* Progress Bar */
+mat-progress-bar {
+  margin-top: 16px;
+  border-radius: 10px;
+  height: 16px;
+  background-color: #e1f5fe;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+mat-progress-bar .mat-progress-bar-fill {
+  background-color: #1e88e5;
+  border-radius: 10px;
+}
+
+/* Motivation Text */
+.motivation {
+  margin-top: 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2e7d32;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 1px;
+  padding: 12px 20px;
+  background-color: #e8f5e9;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.motivation:hover {
+  background-color: #c8e6c9;
+  transform: translateY(-5px);
+}
+
+/* Back Button Specific Styling */
+/* Add this class to your Back button in your HTML (class="back-btn") */
+.back-btn {
+  font-size: 12px !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 16px;
+}
+
+.back-btn mat-icon {
+  font-size: 1rem;
+  margin-right: 4px;
+}
+
+.back-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .savings-goal-container {
+    padding: 20px;
+  }
+
+  .goal-form {
+    gap: 14px;
+  }
+
+  button[mat-raised-button] {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .progress-display {
+    padding: 20px;
+  }
+
+  .motivation {
+    font-size: 1.2rem;
+    padding: 10px 16px;
+  }
+}
+
+/* Hover Effect on Container */
+.savings-goal-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  border: 1px solid #2196f3;
+}
+
+/* Responsive for Progress Bar */
+@media (max-width: 400px) {
+  mat-progress-bar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="savings-goal-container">
+    <h2>🎯 Monthly Savings Goal</h2>
+  
+    <!-- Form to Set Goal -->
+    <form (ngSubmit)="saveGoal()" class="goal-form" #goalForm="ngForm">
+      <mat-form-field appearance="outline" class="goal-input">
+        <mat-label>Enter your savings goal (₹)</mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="goalAmount"
+          name="goalAmount"
+          required
+          placeholder="Enter amount"
+        />
+      </mat-form-field>
+  
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!goalForm.valid"
+      >
+        ✅ Save Goal
+      </button>
+    </form>
+  
+    <!-- Progress Display -->
+    <div *ngIf="goalAmount > 0" class="progress-display">
+      <h3><mat-icon>insert_chart</mat-icon> This Month's Progress</h3>
+      <p><strong>Budgeted:</strong> ₹{{ totalBudget }}</p>
+      <p><strong>Spent:</strong> ₹{{ totalExpenses }}</p>
+      <p><strong>Savings:</strong> ₹{{ savings }}</p>
+  
+      <mat-progress-bar
+        [value]="getSavingsProgress()"
+        mode="determinate"
+        [color]="getProgressColor()"
+      ></mat-progress-bar>
+  
+      <p class="motivation" *ngIf="getMotivationMessage()">
+        {{ getMotivationMessage() }}
+      </p>
+    </div>
+  </div>
+  

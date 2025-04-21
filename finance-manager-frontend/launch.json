@@ -1,0 +1,18 @@
+// .vscode/launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Angular App in Chrome",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4300",
+        "webRoot": "${workspaceFolder}",
+        "sourceMaps": true,
+        "sourceMapPathOverrides": {
+          "webpack:///./*": "${webRoot}/*"
+        }
+      }
+    ]
+  }
+  

@@ -1,0 +1,63 @@
+<app-expense-form (expenseAdded)="loadExpenses()"></app-expense-form>
+
+<h2 class="section-heading">
+  <mat-icon class="section-icon">description</mat-icon> Expenses
+</h2>
+
+<!--  Filter section -->
+<div class="filter-container">
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Search Title</mat-label>
+    <input matInput [(ngModel)]="filters.title" placeholder="e.g. groceries">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Category</mat-label>
+    <input matInput [(ngModel)]="filters.category" placeholder="e.g. food">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Min Amount</mat-label>
+    <input matInput type="number" [(ngModel)]="filters.minAmount">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Max Amount</mat-label>
+    <input matInput type="number" [(ngModel)]="filters.maxAmount">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Start Date</mat-label>
+    <input matInput [matDatepicker]="startPicker" [(ngModel)]="filters.startDate">
+    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+    <mat-datepicker #startPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>End Date</mat-label>
+    <input matInput [matDatepicker]="endPicker" [(ngModel)]="filters.endDate">
+    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+    <mat-datepicker #endPicker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<!--  Filtered Expenses List -->
+<ul>
+  <li *ngFor="let expense of filteredExpenses()">
+    {{ expense.title }} - ₹{{ expense.amount }} ({{ expense.category }}) on {{ expense.date }}
+    <button mat-icon-button color="warn" (click)="deleteExpense(expense.id!)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </li>
+</ul>
+
+<!-- Action Buttons -->
+<div class="button-container">
+  <button class="glow-button" routerLink="/">
+    <mat-icon class="btn-icon">arrow_back</mat-icon> Back
+  </button>
+
+  <button class="glow-button" (click)="exportCSV()">
+    <mat-icon class="btn-icon">download</mat-icon> Export Expenses (CSV)
+  </button>
+</div>
